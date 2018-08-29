@@ -21,7 +21,7 @@ app.use(bodyparser.urlencoded({
     extended: true
 }))
 
-var port = process.env.PORT || 4000;
+var port = process.env.DMS_PORT || 4000;
 
 app.use(cors());
 
@@ -35,7 +35,6 @@ app.get('/documents', (req, res) => {
 
 app.get('/documents/:id', (req, res) => {
     id = req.params.id;
-    console.log("GETTING");
     documentMaster.findById(id, (err, documentMaster) => {
         document.find({ "documentMasterId": id }).then((docs) => {
             // res.contentType('image/jpg');
@@ -84,7 +83,6 @@ app.post('/documents', (req, res) => {
             })
         })
     } else {
-        //console.log("###########################" + req.body.part + "####" + req.body.documentMasterId);
         var doc = new document({
             binaryContent: req.body.binaryContent,
             total: req.body.total,
@@ -99,5 +97,5 @@ app.post('/documents', (req, res) => {
 });
 
 app.listen(port, () => {
-    //console.log("Document Management Service started at:-", port);
+    console.log("Document Management Service started at:-", port);
 })
