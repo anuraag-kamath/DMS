@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-var url = process.env.DMS_URL || "mongodb://mongo:27017/mydms"
+var url = process.env.DMS_MONGODB_URL || "mongodb://mongo:27017/mydms"
 
 
 mongoose.connect(url, {
