@@ -10,10 +10,8 @@ var currentToken = 0;
 document.addEventListener('DOMContentLoaded', function () {
     /* your logic here */
     dmsEls = (document.getElementsByTagName("mydms"));
-    console.log(document.getElementsByTagName("mydms").length);
     if (document.getElementsByTagName("mydms").length > 0) {
         dms_tag_id = dmsEls[0].id;
-        console.log(dmsEls[0].id);
         var row = document.createElement("ROW");
         row.style.display = "flex";
         var div1 = document.createElement("DIV");
@@ -135,9 +133,7 @@ fetchDocuments = () => {
 function documentUploaded(evt) {
     var files = evt.target.files;
     var file = files[0];
-    console.log(file.name);
-    console.log(file.type);
-    console.log(file.size);
+
     if (file.size > 2048000) {
         alert("File Limit of 2MB");
 

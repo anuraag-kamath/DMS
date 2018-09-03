@@ -6,7 +6,7 @@ var url = process.env.DMS_MONGODB_URL || "mongodb://mongo:27017/mydms"
 mongoose.connect(url, {
     useNewUrlParser: true
 }, () => {
-    console.log("MongoDB connected at:-" + url);
+    console.log("DMS MongoDB connected at:-" + url);
 })
 
 
