@@ -21,7 +21,7 @@ app.use(bodyparser.urlencoded({
     extended: true
 }))
 
-var port = process.env.DMS_PORT || 4000;
+var port = process.env.DMS_PORT || process.env.PORT || 4000;
 
 app.use(cors());
 
